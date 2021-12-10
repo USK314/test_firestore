@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Form, status
 from fastapi.responses import JSONResponse
 import crud
+import uvicorn
 
 app = FastAPI()
 
@@ -26,3 +27,7 @@ async def post_member(
 ):
     uuid = await crud.create_member(name)
     return JSONResponse(content={"status": "ok", "uuid": uuid, "name": name}, status_code=status.HTTP_201_CREATED)
+
+# 起動
+if __name__ == '__main__':
+    uvicorn.run("main:app", reload=True)
