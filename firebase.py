@@ -30,7 +30,7 @@ if not is_local:
 
 firebase_app = firebase_admin.initialize_app(cred, {
     'storageBucket': 'test-1.appspot.com',
-    'projectId': 'test-1',
+    'projectId': 'test-1-f85a2',
 })
 
 bucket = storage.bucket()
